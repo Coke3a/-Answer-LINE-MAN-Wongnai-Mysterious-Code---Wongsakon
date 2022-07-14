@@ -17,7 +17,7 @@ func main() {
 		sd[i], sd[j] = sd[j], sd[i]
 	}
 
-	whatIsIt := fmt.Sprintf("%q", sd)
+	whatIsIt := fmt.Sprintf("%s", sd)
 	fmt.Println(whatIsIt)
 
 	// Answer: "Join:us:at:LINE:MAN:Wongnai"
