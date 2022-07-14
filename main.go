@@ -10,19 +10,15 @@ func main() {
 	// var whatIsIt string
 	// secret := "aWFuZ25vVzpOQU06RU5JTDp0YTpzdTpuaW9K"
 	// sd, _ := base64.StdEncoding.DecodeString(secret)
-
 	secret := "aWFuZ25vVzpOQU06RU5JTDp0YTpzdTpuaW9K"
 	sd, _ := base64.StdEncoding.DecodeString(secret)
-	whatIsIt := fmt.Sprintf("%q", reverseByte(sd))
 
+	for i, j := 0, len(sd)-1; i < j; i, j = i+1, j-1 {
+		sd[i], sd[j] = sd[j], sd[i]
+	}
+
+	whatIsIt := fmt.Sprintf("%q", sd)
 	fmt.Println(whatIsIt)
 
 	// Answer: "Join:us:at:LINE:MAN:Wongnai"
-}
-
-func reverseByte(input []byte) []byte {
-	if len(input) == 0 {
-		return input
-	}
-	return append(reverseByte(input[1:]), input[0])
 }
